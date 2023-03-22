@@ -4,8 +4,8 @@ using System.Numerics;
 
 namespace Office_Seat_Booking_Entity
 {
-    [Table("booking")]
-    public class Empoyee
+    [Table("employee")]
+    public class Employee
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
