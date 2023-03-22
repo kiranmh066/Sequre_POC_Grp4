@@ -4,7 +4,7 @@ using System.Numerics;
 
 namespace Office_Seat_Booking_Entity
 {
-    [Table("booking")]
+    [Table("employee")]
     public class Empoyee
     {
         [Key]
