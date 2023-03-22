@@ -5,7 +5,7 @@ using System.Numerics;
 namespace Office_Seat_Booking_Entity
 {
     [Table("employee")]
-    public class Empoyee
+    public class Employee
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
