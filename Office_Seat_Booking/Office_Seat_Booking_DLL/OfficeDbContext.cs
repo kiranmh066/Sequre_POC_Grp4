@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Office_Seat_booking_DLL
+namespace Office_Seat_Booking_DLL
 {
     public class OfficeDbContext: DbContext
     {
@@ -22,6 +22,7 @@ namespace Office_Seat_booking_DLL
         public DbSet<Booking> booking { get; set; }
         public DbSet<Floor> floor { get; set; }
         public DbSet<Seat> seat { get; set; }
+
 
         public DbSet<Parking> parking { get; set; }
 

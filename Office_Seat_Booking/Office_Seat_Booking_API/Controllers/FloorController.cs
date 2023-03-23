@@ -5,7 +5,7 @@ namespace Office_Seat_booking_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class bookingController : ControllerBase
+    public class BookingController : ControllerBase
     {
     }
 }

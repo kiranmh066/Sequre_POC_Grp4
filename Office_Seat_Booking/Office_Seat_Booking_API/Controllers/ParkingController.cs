@@ -7,5 +7,10 @@ namespace Office_Seat_booking_API.Controllers
     [ApiController]
     public class ParkingController : ControllerBase
     {
+
+
+
+
+
     }
 }
