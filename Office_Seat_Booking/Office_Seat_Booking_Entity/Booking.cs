@@ -20,7 +20,6 @@ namespace Office_Seat_Booking_Entity
             [ForeignKey("Employee")]
             public int EmployeeID { get; set; }
             public Employee employee { get; set; }
-
            
 
             [Required]
@@ -44,7 +43,6 @@ namespace Office_Seat_Booking_Entity
 
             [Required]
             public int Booking_Status { get; set; }
-
           
 
             [Required]

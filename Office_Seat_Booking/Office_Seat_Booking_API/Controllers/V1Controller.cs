@@ -7,5 +7,6 @@ namespace Office_Seat_Booking_API.Controllers
     [ApiController]
     public class V1Controller : ControllerBase
     {
+
     }
 }
