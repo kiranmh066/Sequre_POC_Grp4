@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Office_Seat_Booking_Entity
+namespace Office_Seat_booking_Entity
 {
     [Table("seat")]
     public class Seat
     {
         public int Seat_No { get; set; }
 
-        [ForeignKey("Floor")]
-        public int FloorID { get; set; }
-        public Floor floor { get; set; }
+        [ForeignKey("booking")]
+        public int BookingID { get; set; }
+        public booking booking { get; set; }
     }
 }

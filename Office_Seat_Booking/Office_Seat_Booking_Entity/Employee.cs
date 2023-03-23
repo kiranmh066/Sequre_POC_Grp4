@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 
-namespace Office_Seat_Booking_Entity
+namespace Office_Seat_booking_Entity
 {
     [Table("employee")]
     public class Employee

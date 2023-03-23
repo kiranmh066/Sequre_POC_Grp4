@@ -1,4 +1,5 @@
-﻿using Office_Seat_Booking_Entity;
+﻿using Office_Seat_Booking_DLL.Repost;
+using Office_Seat_Booking_Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,34 +17,34 @@ namespace Office_Seat_Booking_BLL.Services
         }
 
         //Add Appointment
-        public void AddAppointment(Booking booking)
+        public void AddBooking(Booking booking)
         {
-            _employeeRepost.AddAppointment(booking);
+            _bookingRepost.AddBooking(booking);
         }
 
         //Delete Appointment
 
-        public void DeleteAppointment(int BookingID)
+        public void DeleteBooking(int bookingID)
         {
-            _employeeRepost.DeleteAppointment(BookingID);
+            _bookingRepost.DeleteBooking(bookingID);
         }
 
         //Update Appointment
 
-        public void UpdateAppointment(Booking booking)
+        public void UpdateBooking(Booking booking)
         {
-            _employeeRepost.UpdateAppointment(booking);
+            _bookingRepost.UpdateBooking(booking);
         }
 
         //Get getAppointments
 
-        public IEnumerable<Booking> GetAppointment()
+        public IEnumerable<Booking> GetBookings()
         {
-            return _employeeRepost.GetAppointment();
+            return _bookingRepost.GetBookings();
         }
-        public Booking GetByAppointmentId(int BookingID)
+        public Booking GetBookingById(int bookingID)
         {
-            return _employeeRepost.GetAppointmentById(BookingID);
+            return _bookingRepost.GetBookingById(bookingID);
         }
     }
 }

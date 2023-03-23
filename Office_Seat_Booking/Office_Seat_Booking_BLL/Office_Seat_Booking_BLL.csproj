@@ -1,9 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Office_Seat_booking_DLL\Office_Seat_booking_DLL.csproj" />
+    <ProjectReference Include="..\Office_Seat_booking_Entity\Office_Seat_booking_Entity.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Office_Seat_Booking_Entity
+namespace Office_Seat_booking_Entity
 {
     [Table("parking")]
     public class Parking
@@ -19,9 +19,9 @@ namespace Office_Seat_Booking_Entity
         [Required]
         public string ParkingType{ get; set; }
 
-        [ForeignKey("Booking")]
+        [ForeignKey("booking")]
         public int BookingID { get; set; }
-        public Booking booking { get; set; }
+        public booking booking { get; set; }
 
 
     }
