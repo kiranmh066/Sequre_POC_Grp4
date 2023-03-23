@@ -1,4 +1,6 @@
-﻿using Office_Seat_Booking_DLL.Repost;
+﻿using Office_Seat_booking_DLL.Repost;
+using Office_Seat_Booking_DLL.Repost;
+using Office_Seat_booking_Entity;
 using Office_Seat_Booking_Entity;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,7 @@ namespace Office_Seat_Booking_BLL.Services
         }
 
         //Delete Appointment
+
 
         public void DeleteSeat(int SeatID)
         {

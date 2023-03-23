@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Office_Seat_booking_Entity
+namespace Office_Seat_Booking_Entity
 {
     [Table("booking")]
     public class Booking

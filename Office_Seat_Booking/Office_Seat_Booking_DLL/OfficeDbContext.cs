@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Office_Seat_booking_DLL
+namespace Office_Seat_Booking_DLL
 {
     public class OfficeDbContext: DbContext
     {
