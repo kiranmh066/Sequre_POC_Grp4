@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Office_Seat_Booking_Entity;
 
 namespace Office_Seat_Booking_API.Controllers
 {
@@ -7,5 +8,42 @@ namespace Office_Seat_Booking_API.Controllers
     [ApiController]
     public class ParkingController : ControllerBase
     {
+        private ParkingService _ParkingService;
+        public ParkingController(ParkingService parkingService)
+        {
+
+            _ParkingService = parkingService;
+        }
+        [HttpGet("GetParkings")]
+        public IEnumerable<Parking> GetParkings()
+        {
+            return _ParkingService.GetParkings();
+        }
+        [HttpGet("GetParkingById")]
+        public Parking GetParkingById(int parkingId)
+        {
+            return _ParkingService.GetParkingByid(parkingId);
+        }
+        [HttpPost("AddParking")]
+        public IActionResult AddParking([FromBody] Parking parking)
+        {
+            _ParkingService.AddParking(parking);
+
+
+            return Ok("Parking created successfully!!");
+
+        }
+        [HttpDelete("DeleteParking")]
+        public IActionResult DeleteParking(int parkingId)
+        {
+            _ParkingService.DeleteParking(parkingId);
+            return Ok("Parking deleted successfully!!");
+        }
+        [HttpPut("UpdateParking")]
+        public IActionResult UpdateParking([FromBody] Parking parking)
+        {
+            _ParkingService.UpdateParking(parking);
+            return Ok("Parking updated successfully!!");
+        }
     }
 }
