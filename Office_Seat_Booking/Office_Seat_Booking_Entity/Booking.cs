@@ -29,20 +29,20 @@ namespace Office_Seat_Booking_Entity
             public int Type_Of_Request { get; set; }
 
             [Required]
-            public DateOnly From_Date { get; set; }
+            public DateTime From_Date { get; set; }
 
             [Required]
-            public DateOnly To_Date { get; set; }
+            public DateTime To_Date { get; set; }
 
             [Required]
-            public TimeOnly Shift_Time { get; set; }
+            public DateTime Shift_Time { get; set; }
 
             [ForeignKey("Seat")]
             public int Seat_No { get; set; }
             public Seat seat { get; set; }
 
             [Required]
-            public int Booking_Status { get; set; }
+            public int booking_Status { get; set; }
           
 
             [Required]

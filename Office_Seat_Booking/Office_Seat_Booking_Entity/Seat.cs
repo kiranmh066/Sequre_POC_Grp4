@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,11 @@ namespace Office_Seat_Booking_Entity
     [Table("seat")]
     public class Seat
     {
+        [Key]
         public int Seat_No { get; set; }
 
-        [ForeignKey("Floor")]
-        public int FloorID { get; set; }
+        [ForeignKey("floor")]
+        public int floorID { get; set; }
         public Floor floor { get; set; }
     }
 }
