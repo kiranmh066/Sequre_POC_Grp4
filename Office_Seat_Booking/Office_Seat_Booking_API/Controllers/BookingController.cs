@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Office_Seat_Booking_BLL.Services;
 using Office_Seat_Booking_Entity;
 
 namespace Office_Seat_booking_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class bookingController : ControllerBase
+    public class BookingController : ControllerBase
     {
         private BookingService _BookingService;
         public BookingController(BookingService bookingService)
@@ -21,7 +22,7 @@ namespace Office_Seat_booking_API.Controllers
         [HttpGet("GetBookingById")]
         public Booking GetBookingById(int bookingId)
         {
-            return _BookingService.GetBookingByid(bookingId);
+            return _BookingService.GetBookingById(bookingId);
         }
         [HttpPost("AddBooking")]
         public IActionResult AddBooking([FromBody] Booking booking)
