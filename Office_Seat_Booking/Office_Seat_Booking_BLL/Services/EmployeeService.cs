@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Office_Seat_Booking_BLL.Services
 {
-    public class EmployeeService
+    internal class EmployeeService
     {
-
     }
 }

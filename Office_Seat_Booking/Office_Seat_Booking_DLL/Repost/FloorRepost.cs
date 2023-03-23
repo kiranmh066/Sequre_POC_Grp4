@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Office_Seat_Booking_DLL;
 using Office_Seat_Booking_DLL.Repost;
-using Office_Seat_Booking_Entity;
-using Office_Seat_Floor_Entity;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
