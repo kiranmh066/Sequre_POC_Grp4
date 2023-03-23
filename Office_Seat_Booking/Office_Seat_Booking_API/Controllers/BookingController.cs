@@ -11,7 +11,6 @@ namespace Office_Seat_booking_API.Controllers
         private BookingService _BookingService;
         public BookingController(BookingService bookingService)
         {
-
             _BookingService = bookingService;
         }
         [HttpGet("GetBookings")]
