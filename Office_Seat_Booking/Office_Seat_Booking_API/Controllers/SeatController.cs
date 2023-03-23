@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Office_Seat_Booking_BLL.Services;
-using Office_Seat_booking_Entity;
 using Office_Seat_Booking_Entity;
 
 namespace Office_Seat_booking_API.Controllers
@@ -20,12 +19,12 @@ namespace Office_Seat_booking_API.Controllers
         [HttpGet("GetSeats")]
         public IEnumerable<Seat> GetSeats()
         {
-            return _SeatService.GetSeats();
+            return _SeatService.GetSeat();
         }
         [HttpGet("GetSeatById")]
         public Seat GetSeatById(int seatId)
         {
-            return _SeatService.GetSeatByid(seatId);
+            return _SeatService.GetBySeatId(seatId);
         }
         [HttpPost("AddSeat")]
         public IActionResult AddSeat([FromBody] Seat seat)

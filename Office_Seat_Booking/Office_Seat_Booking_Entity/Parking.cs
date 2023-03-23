@@ -21,7 +21,7 @@ namespace Office_Seat_Booking_Entity
 
         [ForeignKey("booking")]
         public int BookingID { get; set; }
-        public booking booking { get; set; }
+        public Booking booking { get; set; }
 
 
     }

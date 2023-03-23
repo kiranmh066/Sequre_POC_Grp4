@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Office_Seat_Booking_BLL.Services;
 using Office_Seat_Booking_Entity;
 
 namespace Office_Seat_booking_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class bookingController : ControllerBase
+    public class FloorController : ControllerBase
     {
         private FloorService _FloorService;
         public FloorController(FloorService floorService)
@@ -17,12 +18,12 @@ namespace Office_Seat_booking_API.Controllers
         [HttpGet("GetFloors")]
         public IEnumerable<Floor> GetFloors()
         {
-            return _FloorService.GetFloors();
+            return _FloorService.GetFloor();
         }
         [HttpGet("GetFloorById")]
         public Floor GetFloorById(int floorId)
         {
-            return _FloorService.GetFloorByid(floorId);
+            return _FloorService.GetByFloorId(floorId);
         }
         [HttpPost("AddFloor")]
         public IActionResult AddFloor([FromBody] Floor floor)
