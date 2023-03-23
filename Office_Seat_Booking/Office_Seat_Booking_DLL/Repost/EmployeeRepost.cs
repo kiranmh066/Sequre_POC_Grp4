@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Office_Seat_Booking_Entity;
+using Office_Seat_booking_Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Office_Seat_Booking_DLL.Repost
+namespace Office_Seat_booking_DLL.Repost
 {
     public class EmployeeRepost:IEmployeeRepost
     {

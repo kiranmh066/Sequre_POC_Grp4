@@ -1,15 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Office_Seat_Booking_DLL;
-using Office_Seat_Booking_DLL.Repost;
-using Office_Seat_Booking_Entity;
-using Office_Seat_Floor_Entity;
+using Office_Seat_floor_DLL;
+using Office_Seat_floor_DLL.Repost;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Office_Seat_Floor_DLL.Repost
+namespace Office_Seat_floor_DLL.Repost
 {
     public class FloorRepost:IFloorRepost
     {
@@ -19,31 +17,31 @@ namespace Office_Seat_Floor_DLL.Repost
         {
             _dbContext = dbContext;
         }
-        public void AddFloor(Floor floor)
+        public void Addfloor(Floor floor)
         {
             _dbContext.floor.Add(floor);
             _dbContext.SaveChanges();
         }
 
-        public void DeleteFloor(int floorId)
+        public void Deletefloor(int floorId)
         {
             var floor = _dbContext.floor.Find(floorId);
             _dbContext.floor.Remove(floor);
             _dbContext.SaveChanges();
         }
 
-        public Floor GetFloorById(int floorId)
+        public floor GetfloorById(int floorId)
         {
             return _dbContext.floor.Find(floorId);
         }
 
-        public IEnumerable<Floor> GetFloors()
+        public IEnumerable<floor> Getfloors()
         {
             return _dbContext.floor.ToList();
         }
 
 
-        public void UpdateFloor(Floor floor)
+        public void Updatefloor(floor floor)
         {
 
             _dbContext.Entry(floor).State = EntityState.Modified;

@@ -1,13 +1,16 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Office_Seat_Booking_BLL.Services;
+using Office_Seat_booking_Entity;
 using Office_Seat_Booking_Entity;
 
-namespace Office_Seat_Booking_API.Controllers
+namespace Office_Seat_booking_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class SeatController : ControllerBase
     {
+
         private SeatService _SeatService;
         public SeatController(SeatService seatService)
         {
@@ -45,5 +48,6 @@ namespace Office_Seat_Booking_API.Controllers
             _SeatService.UpdateSeat(seat);
             return Ok("Seat updated successfully!!");
         }
+
     }
 }

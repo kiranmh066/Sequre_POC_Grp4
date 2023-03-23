@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Office_Seat_Booking_Entity;
 
-namespace Office_Seat_Booking_API.Controllers
+namespace Office_Seat_booking_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
