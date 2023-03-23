@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-
 namespace Office_Seat_Booking_API.Controllers
 {
     [ApiController]
