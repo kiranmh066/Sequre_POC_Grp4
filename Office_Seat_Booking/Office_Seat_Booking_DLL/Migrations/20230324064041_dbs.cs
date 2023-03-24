@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Office_Seat_Booking_DLL.Migrations
 {
     /// <inheritdoc />
-    public partial class db : Migration
+    public partial class dbs : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -51,14 +51,14 @@ namespace Office_Seat_Booking_DLL.Migrations
                 {
                     Seat_No = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    floorID = table.Column<int>(type: "int", nullable: false)
+                    FloorID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_seat", x => x.Seat_No);
                     table.ForeignKey(
-                        name: "FK_seat_floor_floorID",
-                        column: x => x.floorID,
+                        name: "FK_seat_floor_FloorID",
+                        column: x => x.FloorID,
                         principalTable: "floor",
                         principalColumn: "FloorID",
                         onDelete: ReferentialAction.Cascade);
@@ -77,7 +77,6 @@ namespace Office_Seat_Booking_DLL.Migrations
                     To_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Shift_Time = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Seat_No = table.Column<int>(type: "int", nullable: false),
-                    Seat_No1 = table.Column<int>(type: "int", nullable: false),
                     booking_Status = table.Column<int>(type: "int", nullable: false),
                     Emp_Status = table.Column<bool>(type: "bit", nullable: false),
                     Vehicle = table.Column<bool>(type: "bit", nullable: false)
@@ -92,8 +91,8 @@ namespace Office_Seat_Booking_DLL.Migrations
                         principalColumn: "EmpID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_booking_seat_Seat_No1",
-                        column: x => x.Seat_No1,
+                        name: "FK_booking_seat_Seat_No",
+                        column: x => x.Seat_No,
                         principalTable: "seat",
                         principalColumn: "Seat_No",
                         onDelete: ReferentialAction.Cascade);
@@ -125,9 +124,9 @@ namespace Office_Seat_Booking_DLL.Migrations
                 column: "EmployeeID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_booking_Seat_No1",
+                name: "IX_booking_Seat_No",
                 table: "booking",
-                column: "Seat_No1");
+                column: "Seat_No");
 
             migrationBuilder.CreateIndex(
                 name: "IX_parking_BookingID",
@@ -135,9 +134,9 @@ namespace Office_Seat_Booking_DLL.Migrations
                 column: "BookingID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_seat_floorID",
+                name: "IX_seat_FloorID",
                 table: "seat",
-                column: "floorID");
+                column: "FloorID");
         }
 
         /// <inheritdoc />

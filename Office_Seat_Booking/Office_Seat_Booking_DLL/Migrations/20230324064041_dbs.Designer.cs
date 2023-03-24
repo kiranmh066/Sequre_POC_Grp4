@@ -12,8 +12,8 @@ using Office_Seat_Booking_DLL;
 namespace Office_Seat_Booking_DLL.Migrations
 {
     [DbContext(typeof(OfficeDbContext))]
-    [Migration("20230324050424_db")]
-    partial class db
+    [Migration("20230324064041_dbs")]
+    partial class dbs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,9 +48,6 @@ namespace Office_Seat_Booking_DLL.Migrations
                     b.Property<int>("Seat_No")
                         .HasColumnType("int");
 
-                    b.Property<int>("Seat_No1")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Shift_Time")
                         .HasColumnType("datetime2");
 
@@ -70,7 +67,7 @@ namespace Office_Seat_Booking_DLL.Migrations
 
                     b.HasIndex("EmployeeID");
 
-                    b.HasIndex("Seat_No1");
+                    b.HasIndex("Seat_No");
 
                     b.ToTable("booking");
                 });
@@ -170,12 +167,12 @@ namespace Office_Seat_Booking_DLL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Seat_No"));
 
-                    b.Property<int>("floorID")
+                    b.Property<int>("FloorID")
                         .HasColumnType("int");
 
                     b.HasKey("Seat_No");
 
-                    b.HasIndex("floorID");
+                    b.HasIndex("FloorID");
 
                     b.ToTable("seat");
                 });
@@ -190,7 +187,7 @@ namespace Office_Seat_Booking_DLL.Migrations
 
                     b.HasOne("Office_Seat_Booking_Entity.Seat", "seat")
                         .WithMany()
-                        .HasForeignKey("Seat_No1")
+                        .HasForeignKey("Seat_No")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -214,7 +211,7 @@ namespace Office_Seat_Booking_DLL.Migrations
                 {
                     b.HasOne("Office_Seat_Booking_Entity.Floor", "floor")
                         .WithMany()
-                        .HasForeignKey("floorID")
+                        .HasForeignKey("FloorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

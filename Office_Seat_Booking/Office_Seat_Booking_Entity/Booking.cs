@@ -17,7 +17,7 @@ namespace Office_Seat_Booking_Entity
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             public int BookingID { get; set; }
 
-            [ForeignKey("Employee")]
+            [ForeignKey("employee")]
             public int EmployeeID { get; set; }
             public Employee employee { get; set; }
            
@@ -37,9 +37,9 @@ namespace Office_Seat_Booking_Entity
             [Required]
             public DateTime Shift_Time { get; set; }
 
-            [ForeignKey("Seat")]
+            [ForeignKey("seat")]
             public int Seat_No { get; set; }
-            public Seat seaT { get; set; }
+            public Seat seat { get; set; }
 
             [Required]
             public int booking_Status { get; set; }
