@@ -12,13 +12,8 @@ using Office_Seat_Booking_DLL;
 namespace Office_Seat_Booking_DLL.Migrations
 {
     [DbContext(typeof(OfficeDbContext))]
-<<<<<<<< HEAD:Office_Seat_Booking/Office_Seat_Booking_DLL/Migrations/20230324064339_Bh.Designer.cs
-    [Migration("20230324064339_Bh")]
-    partial class Bh
-========
-    [Migration("20230324063425_harsh")]
-    partial class harsh
->>>>>>>> e2fbeb29420e5f0044d2c4bd0e2c3a51fb11ba6e:Office_Seat_Booking/Office_Seat_Booking_DLL/Migrations/20230324063425_harsh.Designer.cs
+    [Migration("20230324103446_dat")]
+    partial class dat
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
