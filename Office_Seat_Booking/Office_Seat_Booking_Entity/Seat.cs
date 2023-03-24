@@ -12,10 +12,11 @@ namespace Office_Seat_Booking_Entity
     public class Seat
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Seat_No { get; set; }
 
-        [ForeignKey("booking")]
-        public int BookingID { get; set; }
-        public Booking booking { get; set; }
+        [ForeignKey("floor")]
+        public int FloorID { get; set; }
+        public Floor floor { get; set; }
     }
 }
