@@ -30,7 +30,11 @@ namespace Office_Seat_Booking_DLL
        
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
+<<<<<<< HEAD
             dbContextOptionsBuilder.UseSqlServer("Data Source=DESKTOP-2EN1VVU\\SQLEXPRESS; Initial Catalog = Restaurant_KiranC; Integrated Security=True;");
+=======
+            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-26DGK8D; Initial Catalog = OfficeDb; Integrated Security = True; Trusted_Connection=True; TrustServerCertificate=True;");
+>>>>>>> 7e518fababa9a419a691327be98a8c0278557ab6
 
         }
     }
