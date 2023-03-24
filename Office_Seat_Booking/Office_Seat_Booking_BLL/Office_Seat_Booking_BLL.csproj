@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Office_Seat_Booking_DLL\Office_Seat_Booking_DLL.csproj" />
+    <ProjectReference Include="..\Office_Seat_Booking_Entity\Office_Seat_Booking_Entity.csproj" />
+  </ItemGroup>
+
 </Project>

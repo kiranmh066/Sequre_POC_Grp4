@@ -19,7 +19,7 @@ namespace Office_Seat_Booking_Entity
         [Required]
         public string ParkingType{ get; set; }
 
-        [ForeignKey("Booking")]
+        [ForeignKey("booking")]
         public int BookingID { get; set; }
         public Booking booking { get; set; }
 

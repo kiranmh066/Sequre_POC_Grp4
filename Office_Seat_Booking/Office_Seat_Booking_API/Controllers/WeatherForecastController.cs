@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Office_Seat_Booking_API.Controllers
+namespace Office_Seat_booking_API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
