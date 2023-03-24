@@ -1,20 +1,15 @@
-<<<<<<< HEAD
-﻿namespace Office_Seat_Booking_API.Controllers
-=======
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Office_Seat_Booking_BLL.Services;
+using Office_Seat_booking_Entity;
 using Office_Seat_Booking_Entity;
 
 namespace Office_Seat_booking_API.Controllers
->>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
 {
     [Route("api/[controller]")]
     [ApiController]
     public class SeatController : ControllerBase
     {
-<<<<<<< HEAD
-=======
 
         private SeatService _SeatService;
         public SeatController(SeatService seatService)
@@ -25,12 +20,12 @@ namespace Office_Seat_booking_API.Controllers
         [HttpGet("GetSeats")]
         public IEnumerable<Seat> GetSeats()
         {
-            return _SeatService.GetSeat();
+            return _SeatService.GetSeats();
         }
         [HttpGet("GetSeatById")]
         public Seat GetSeatById(int seatId)
         {
-            return _SeatService.GetBySeatId(seatId);
+            return _SeatService.GetSeatByid(seatId);
         }
         [HttpPost("AddSeat")]
         public IActionResult AddSeat([FromBody] Seat seat)
@@ -54,6 +49,5 @@ namespace Office_Seat_booking_API.Controllers
             return Ok("Seat updated successfully!!");
         }
 
->>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
     }
 }

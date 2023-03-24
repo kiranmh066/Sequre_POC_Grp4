@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-﻿namespace Office_Seat_Booking_BLL.Services
-{
-    internal class FloorService
-    {
-=======
 ﻿using Office_Seat_Booking_DLL.Repost;
 using Office_Seat_Booking_Entity;
+using Office_Seat_Floor_DLL.Repost;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -53,6 +48,5 @@ namespace Office_Seat_Booking_BLL.Services
         {
             return _floorRepost.GetFloorById(EmployeeID);
         }
->>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
     }
 }

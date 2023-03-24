@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-﻿using Office_Seat_Booking_Entity;
-
-namespace Office_Seat_Booking_DLL.Repost
-{
-    public class BookingRepost : IBookingRepost
-=======
 ﻿using Microsoft.EntityFrameworkCore;
 using Office_Seat_Booking_Entity;
 using System;
@@ -16,7 +9,6 @@ using System.Threading.Tasks;
 namespace Office_Seat_Booking_DLL.Repost
 {
     public class BookingRepost:IBookingRepost
->>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
     {
         OfficeDbContext _dbContext;//default private
 
@@ -47,11 +39,7 @@ namespace Office_Seat_Booking_DLL.Repost
             return _dbContext.booking.ToList();
         }
 
-<<<<<<< HEAD
-
-=======
         
->>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
         public void UpdateBooking(Booking booking)
         {
 

@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-﻿namespace Office_Seat_Booking_BLL.Services
-{
-    internal class SeatService
-    {
-=======
-﻿
+﻿using Office_Seat_booking_DLL.Repost;
 using Office_Seat_Booking_DLL.Repost;
+using Office_Seat_booking_Entity;
 using Office_Seat_Booking_Entity;
 using System;
 using System.Collections.Generic;
@@ -24,17 +19,17 @@ namespace Office_Seat_Booking_BLL.Services
         }
 
         //Add Appointment
-        public void AddSeat(Seat seat)
+        public void AddSeat(Seat Seat)
         {
-            _SeatRepost.AddSeat(seat);
+            _SeatRepost.AddSeat(Seat);
         }
 
         //Delete Appointment
 
 
-        public void DeleteSeat(int seatID)
+        public void DeleteSeat(int SeatID)
         {
-            _SeatRepost.DeleteSeat(seatID);
+            _SeatRepost.DeleteSeat(SeatID);
         }
 
         //Update Appointment
@@ -54,6 +49,5 @@ namespace Office_Seat_Booking_BLL.Services
         {
             return _SeatRepost.GetSeatById(SeatID);
         }
->>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
     }
 }

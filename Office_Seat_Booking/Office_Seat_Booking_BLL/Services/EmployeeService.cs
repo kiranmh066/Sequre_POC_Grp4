@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Office_Seat_Booking_BLL.Services
-{
-    internal class EmployeeService
-    {
-=======
 ﻿using Office_Seat_Booking_DLL.Repost;
-using Office_Seat_Booking_DLL.Repost;
 using Office_Seat_Booking_Entity;
 using System;
 using System.Collections.Generic;
@@ -53,6 +46,5 @@ namespace Office_Seat_Booking_BLL.Services
         {
             return _employeeRepost.GetEmployeeById(EmployeeID);
         }
->>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
     }
 }

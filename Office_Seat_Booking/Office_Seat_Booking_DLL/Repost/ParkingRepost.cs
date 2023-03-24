@@ -1,25 +1,16 @@
-<<<<<<< HEAD
-﻿using Office_Seat_Booking_DLL;
-using Office_Seat_Booking_DLL.Repost;
-using Office_Seat_Booking_Entity;
-
-namespace Office_Seat_Parking_DLL.Repost
-{
-    public class ParkingRepost : IParkingRepost
-=======
 ﻿using Microsoft.EntityFrameworkCore;
-using Office_Seat_Booking_DLL;
-using Office_Seat_Booking_Entity;
+using Office_Seat_booking_DLL;
+using Office_Seat_booking_DLL.Repost;
+using Office_Seat_booking_Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Office_Seat_Booking_DLL.Repost
+namespace Office_Seat_Parking_DLL.Repost
 {
     public class ParkingRepost:IParkingRepost
->>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
     {
         OfficeDbContext _dbContext;//default private
 
