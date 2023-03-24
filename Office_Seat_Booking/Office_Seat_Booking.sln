@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Office_Seat_Booking_Entity"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Office_Seat_Booking_BLL", "Office_Seat_Booking_BLL\Office_Seat_Booking_BLL.csproj", "{5E3D267C-2186-4455-841F-1AEB3A2300E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office_Seat_Booking_API", "Office_Seat_Booking_API\Office_Seat_Booking_API.csproj", "{A79911A5-3C13-4724-961D-1B8D813633AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Office_Seat_Booking_API", "Office_Seat_Booking_API\Office_Seat_Booking_API.csproj", "{A79911A5-3C13-4724-961D-1B8D813633AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office_Seat_Booking_MVC", "Office_Seat_Booking_MVC\Office_Seat_Booking_MVC.csproj", "{BC698B78-D229-4D3C-8555-3052D1278FDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A79911A5-3C13-4724-961D-1B8D813633AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A79911A5-3C13-4724-961D-1B8D813633AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A79911A5-3C13-4724-961D-1B8D813633AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC698B78-D229-4D3C-8555-3052D1278FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC698B78-D229-4D3C-8555-3052D1278FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC698B78-D229-4D3C-8555-3052D1278FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC698B78-D229-4D3C-8555-3052D1278FDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
