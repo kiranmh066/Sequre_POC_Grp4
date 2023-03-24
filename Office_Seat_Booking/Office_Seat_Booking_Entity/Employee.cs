@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 ﻿namespace Office_Seat_Booking_Entity
+=======
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Numerics;
+
+namespace Office_Seat_Booking_Entity
+>>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
 {
     [Table("employee")]
     public class Employee
@@ -7,7 +15,11 @@
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmpID { get; set; }
 
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
         [Column(TypeName = "varchar(30)")]
         public string Name { get; set; }
 

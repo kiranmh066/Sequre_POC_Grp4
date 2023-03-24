@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 namespace Office_Seat_Booking_API.Controllers
+=======
+using Microsoft.AspNetCore.Mvc;
+
+namespace Office_Seat_booking_API.Controllers
+>>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
 {
     [ApiController]
     [Route("[controller]")]

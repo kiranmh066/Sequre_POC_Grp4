@@ -1,4 +1,4 @@
-namespace Office_Seat_Booking_API
+namespace Office_Seat_booking_API
 {
     public class WeatherForecast
     {

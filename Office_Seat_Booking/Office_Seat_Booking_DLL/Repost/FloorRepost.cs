@@ -1,9 +1,24 @@
+<<<<<<< HEAD
 ﻿using Office_Seat_Booking_DLL;
 using Office_Seat_Booking_DLL.Repost;
 
 namespace Office_Seat_Floor_DLL.Repost
 {
     public class FloorRepost : IFloorRepost
+=======
+﻿using Microsoft.EntityFrameworkCore;
+using Office_Seat_Booking_DLL;
+using Office_Seat_Booking_Entity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Office_Seat_Booking_DLL.Repost
+{
+    public class FloorRepost:IFloorRepost
+>>>>>>> 05bf81c614ebfe46032e65eec91ff32c97ef529f
     {
         OfficeDbContext _dbContext;//default private
 
