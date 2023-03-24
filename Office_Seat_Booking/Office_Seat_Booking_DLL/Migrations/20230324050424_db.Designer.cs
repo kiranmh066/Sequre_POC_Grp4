@@ -12,8 +12,8 @@ using Office_Seat_Booking_DLL;
 namespace Office_Seat_Booking_DLL.Migrations
 {
     [DbContext(typeof(OfficeDbContext))]
-    [Migration("20230323102649_harsh")]
-    partial class harsh
+    [Migration("20230324050424_db")]
+    partial class db
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,6 +48,9 @@ namespace Office_Seat_Booking_DLL.Migrations
                     b.Property<int>("Seat_No")
                         .HasColumnType("int");
 
+                    b.Property<int>("Seat_No1")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Shift_Time")
                         .HasColumnType("datetime2");
 
@@ -66,6 +69,8 @@ namespace Office_Seat_Booking_DLL.Migrations
                     b.HasKey("BookingID");
 
                     b.HasIndex("EmployeeID");
+
+                    b.HasIndex("Seat_No1");
 
                     b.ToTable("booking");
                 });
@@ -165,13 +170,12 @@ namespace Office_Seat_Booking_DLL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Seat_No"));
 
-                    b.Property<int>("BookingID")
+                    b.Property<int>("floorID")
                         .HasColumnType("int");
 
                     b.HasKey("Seat_No");
 
-                    b.HasIndex("BookingID")
-                        .IsUnique();
+                    b.HasIndex("floorID");
 
                     b.ToTable("seat");
                 });
@@ -184,7 +188,15 @@ namespace Office_Seat_Booking_DLL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Office_Seat_Booking_Entity.Seat", "seat")
+                        .WithMany()
+                        .HasForeignKey("Seat_No1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("employee");
+
+                    b.Navigation("seat");
                 });
 
             modelBuilder.Entity("Office_Seat_Booking_Entity.Parking", b =>
@@ -200,19 +212,13 @@ namespace Office_Seat_Booking_DLL.Migrations
 
             modelBuilder.Entity("Office_Seat_Booking_Entity.Seat", b =>
                 {
-                    b.HasOne("Office_Seat_Booking_Entity.Booking", "booking")
-                        .WithOne("seat")
-                        .HasForeignKey("Office_Seat_Booking_Entity.Seat", "BookingID")
+                    b.HasOne("Office_Seat_Booking_Entity.Floor", "floor")
+                        .WithMany()
+                        .HasForeignKey("floorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("booking");
-                });
-
-            modelBuilder.Entity("Office_Seat_Booking_Entity.Booking", b =>
-                {
-                    b.Navigation("seat")
-                        .IsRequired();
+                    b.Navigation("floor");
                 });
 #pragma warning restore 612, 618
         }

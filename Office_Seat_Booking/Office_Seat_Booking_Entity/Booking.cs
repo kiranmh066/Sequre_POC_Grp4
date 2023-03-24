@@ -39,7 +39,7 @@ namespace Office_Seat_Booking_Entity
 
             [ForeignKey("Seat")]
             public int Seat_No { get; set; }
-            public Seat seat { get; set; }
+            public Seat seaT { get; set; }
 
             [Required]
             public int booking_Status { get; set; }
