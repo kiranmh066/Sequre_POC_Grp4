@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Office_Seat_Booking_DLL.Migrations
 {
     /// <inheritdoc />
-    public partial class dat : Migration
+    public partial class DD : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
