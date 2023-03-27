@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Numerics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Office_Seat_Booking_Entity
 {
@@ -11,11 +12,11 @@ namespace Office_Seat_Booking_Entity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmpID { get; set; }
 
-        
+        [AllowNull]
         [Column(TypeName = "varchar(30)")]
         public string Name { get; set; }
 
-        [Required]
+        [AllowNull]
         public int PhoneNo { get; set; }
 
         [Required]
@@ -24,18 +25,19 @@ namespace Office_Seat_Booking_Entity
         [Required]
         public string Password { get; set; }
 
+        [AllowNull]
         public char Gender { get; set; }
 
-        [Required]
+        [AllowNull]
         public string Secret_Key { get; set; }
-
+        [AllowNull]
         [Column(TypeName = "varchar(30)")]
         public string Place { get; set; }
 
-        [Required]
+        [AllowNull]
         public string Role { get; set; }
 
-        [Required]
+        [AllowNull]
         public string Designation { get; set; }
 
     }
