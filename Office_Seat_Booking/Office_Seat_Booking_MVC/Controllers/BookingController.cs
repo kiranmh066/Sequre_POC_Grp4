@@ -26,7 +26,7 @@ namespace Office_Seat_Booking_MVC.Controllers
             IEnumerable<Booking> bookingresult = null;
             using (HttpClient client = new HttpClient())
             {
-                string endPoint = _configuration["WebApiBaseUrl"] + "BookingController/GetBookings";
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookings";
                 using (var response = await client.GetAsync(endPoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -51,7 +51,7 @@ namespace Office_Seat_Booking_MVC.Controllers
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "BookingController/AddBooking";//api controller name and its function
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/AddBooking";//api controller name and its function
 
                 using (var response = await client.PostAsync(endPoint, content))
                 {
@@ -98,7 +98,7 @@ namespace Office_Seat_Booking_MVC.Controllers
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(bookings), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "BookingController/UpdateBooking";
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/UpdateBooking";
                 using (var response = await client.PutAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -121,7 +121,7 @@ namespace Office_Seat_Booking_MVC.Controllers
             Booking bookings = null;
             using (HttpClient client = new HttpClient())
             {
-                string endPoint = _configuration["WebApiBaseUrl"] + "BookingController/GetBookingById?bookingId=" + bookingId;
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingById?bookingId=" + bookingId;
                 using (var response = await client.GetAsync(endPoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -140,7 +140,7 @@ namespace Office_Seat_Booking_MVC.Controllers
             ViewBag.status = "";
             using (HttpClient client = new HttpClient())
             {
-                string endPoint = _configuration["WebApiBaseUrl"] + "BookingController/DeleteBooking?bookingId=" + bookings.BookingID;
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/DeleteBooking?bookingId=" + bookings.BookingID;
 
                 using (var response = await client.DeleteAsync(endPoint))
                 {
