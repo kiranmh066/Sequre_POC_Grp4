@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Office_Seat_Booking_DLL;
-using Office_Seat_Booking_DLL.Repost;
 using Office_Seat_Booking_Entity;
 
 using System;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Office_Seat_Seat_DLL.Repost
+namespace Office_Seat_Booking_DLL.Repost
 {
     public class SeatRepost:ISeatRepost
     {

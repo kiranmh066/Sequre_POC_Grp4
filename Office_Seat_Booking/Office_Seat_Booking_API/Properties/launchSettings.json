@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Office_Seat_Booking_API": {
+    "Office_Seat_booking_API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
