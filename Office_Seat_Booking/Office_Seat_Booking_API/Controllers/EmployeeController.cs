@@ -46,5 +46,30 @@ namespace Office_Seat_Booking_API.Controllers
             _EmployeeService.UpdateEmployee(employee);
             return Ok("Employee updated successfully!!");
         }
+       
+        [HttpPost("Login")]
+        public Employee Login(Employee employee)
+        {
+            #region Function of login
+            try
+            {
+                Employee Employee = _EmployeeService.Login(employee);
+                if (Employee != null)
+                {
+                    return Employee;
+                }
+                else
+                {
+                  
+                    return null;
+                }
+            }
+            catch (NullReferenceException)
+            {
+                return null;
+            }
+            #endregion
+        }
+
     }
 }
