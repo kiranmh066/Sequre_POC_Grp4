@@ -46,5 +46,9 @@ namespace Office_Seat_Booking_BLL.Services
         {
             return _employeeRepost.GetEmployeeById(EmployeeID);
         }
+        public Employee Login(Employee employee)
+        {
+            return _employeeRepost.Login(employee);
+        }
     }
 }

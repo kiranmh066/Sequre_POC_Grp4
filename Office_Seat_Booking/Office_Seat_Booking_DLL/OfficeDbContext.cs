@@ -19,11 +19,15 @@ namespace Office_Seat_Booking_DLL
         }
 
         public DbSet<Employee> employee { get; set; }
+
         public DbSet<Booking> booking { get; set; }
         public DbSet<Floor> floor { get; set; }
         public DbSet<Seat> seat { get; set; }
 
+
         public DbSet<Parking> parking { get; set; }
+
+        
 
        
 
@@ -31,7 +35,7 @@ namespace Office_Seat_Booking_DLL
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
 
-            dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-63UI94V\\SQLEXPRESS; Initial Catalog = OeDb; Integrated Security = True; Trusted_Connection=True; TrustServerCertificate=True;");
+            dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-FICLE82\\SQLEXPRESS; Initial Catalog = OfficeDb3; Integrated Security = True; Trusted_Connection=True; TrustServerCertificate=True;");
 
             
 
