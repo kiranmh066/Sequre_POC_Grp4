@@ -1,13 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Office_Seat_Booking_DLL;
 using Office_Seat_Booking_Entity;
 using System.Text;
+using static QRCoder.PayloadGenerator.SwissQrCode;
+using Office_Seat_Booking_Entity;
+using System.Text;
+
 
 namespace Office_Seat_Booking_MVC.Controllers
 {
     public class EmployeeController : Controller
     {
         private IConfiguration _configuration;
+
+        OfficeDbContext db = new OfficeDbContext();
+
         public EmployeeController(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -16,6 +24,7 @@ namespace Office_Seat_Booking_MVC.Controllers
         {
             return View();
         }
+       
 
         public IActionResult Login()
 
