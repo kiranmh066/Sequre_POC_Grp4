@@ -1,0 +1,92 @@
+﻿@model Office_Seat_Booking_Entity.Booking
+@*//this name should be the name of projects under dependencies after adding referrences in MvcUi*@
+
+
+
+
+
+
+
+<body style="background-color:#5A3B5D;color:white;padding-bottom:100px">
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            <center>
+                <h3> Edit Booking details </h3>
+            </center>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @*  form group for automatic audjustment for various screen sizes*@
+                        <label>BookingId</label>
+                        <input type="text" asp-for="BookingID" class="form-control" placeholder="Enter BookingId" required />
+                    </div>
+                    <div class="form-group">
+                        <label>EmployeeID</label>
+                        <input type="text" asp-for="EmployeeID" class="form-control" placeholder="Enter EmployeeID" required />
+                    </div>
+                </div> <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label>Food_Type</label>
+                        <input type="text" asp-for="Food_Type" class="form-control" placeholder="Enter Food_Type" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Type_Of_Request</label>
+                        <input type="text" asp-for="Type_Of_Request" class="form-control" placeholder="Enter Type_Of_Request" required />
+                    </div>
+                    <div class="form-group">
+                        <label>From_Date</label>
+                        <input type="text" asp-for="From_Date" class="form-control" placeholder="Enter From_Date" required />
+                    </div>
+                    <div class="form-group">
+                        <label>To_Date</label>
+                        <input type="text" asp-for="To_Date" class="form-control" placeholder="Enter To_Date" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Shift_Time</label>
+                        <input type="text" asp-for="Shift_Time" class="form-control" placeholder="Enter Shift_Time required   />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Seat_No</label>
+                            <select asp-for=" Seat_No" asp-items="@ViewBag.Gender1" class="form-control" placeholder="Enter Seat_No" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label>booking_Status</label>
+                            <input type="text" asp-for="booking_Status" class="form-control" placeholder="Enter booking_Status" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Emp_Status</label>
+                            <input type="text" asp-for="Emp_Status " class="form-control" placeholder="Enter Emp_Status" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Vehicle</label>
+                            <input type="text" asp-for="Vehicle" class="form-control" placeholder="Enter Vehicle" required />
+                        </div>
+                    </div>
+                </div>
+
+                <input type="submit" value="Save" class="btn btn-outline-success" />
+                &nbsp;&nbsp;
+                <input type="reset" value="Reset" class="btn btn-outline-secondary" />
+                <br />
+                @*submit sends form to server thats why we use submit not button type  *@
+                @*   by default get request is called so we have mention post in the initial stage of form which will call httppost in Employeecontroller *@
+                @if (ViewBag.status == "Ok")
+                {
+                    <div class="alert alert-success">
+                        @ViewBag.message
+                    </div>
+                }
+                else if (ViewBag.status == "Error")
+                {
+                    <div class="alert alert-danger">
+                        @ViewBag.message
+                    </div>
+                }
+        </form>
+    </div>
+</body>

@@ -1,7 +1,65 @@
-﻿
+﻿@model  IEnumerable<Office_Seat_Booking_Entity.Booking>
+@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+*@
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+@*<h1>Index</h1>*@
 
+<div>
+    <hr />
+    <a asp-controller="Booking" asp-action="AddBooking">AddBooking details </a>
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h3>Booking</h3>
+        <hr />
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>BookingID</th>
+                    <th>EmployeeID</th>
+                    <th>Food_Type</th>
+                    <th>Type_Of_Request</th>
+                    <th>From_Date</th>
+                    <th>To_Date</th>
+                    <th>Shift_Time</th>
+                    <th>Seat_No</th>
+                    <th>booking_Status</th>
+                    <th>Emp_Status</th>
+                    <th>Vehicle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Booking in Model)
+                {
+                    <tr>
+                        <td>@Booking.BookingID</td>
+                        <td>@Booking.EmployeeID</td>
+                        <td>@Booking.Food_Type</td>
+                        <td>@Booking.Type_Of_Request</td>
+                        <td>@Booking.From_Date</td>
+                        <td>@Booking.To_Date</td>
+                        <td>@Booking.Shift_Time</td>
+                        <td>@Booking.Seat_No</td>
+                        <td>@Booking.booking_Status</td>
+                        <td>@Booking.Emp_Status</td>
+                        <td>@Booking.Vehicle</td>
+
+                        <td>
+                            <a asp-controller="Booking" asp-action="EditBooking" asp-route-Id="@Booking.BookingID">Edit</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Booking" asp-action="DeleteBooking" asp-route-Id="@Booking.BookingID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
