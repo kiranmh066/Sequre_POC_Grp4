@@ -1,0 +1,90 @@
+﻿@model Office_Seat_Booking_Entity.Employee
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Edit employee">employee</a>
+    </li>
+    <!-- Begin Page Content -->
+    <div class="container-fluid mt-4">
+        <div class="card o-hidden border-0 shadow-lg">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Create New employee</h1>
+                            </div>
+                            <form class="user" method="post">
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" asp-for="Name" class="form-control" placeholder="Enter Title" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>email</label>
+                                    <textarea class="form-control" asp-for="Email" rows="12" placeholder="Enter Content"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>password</label>
+                                    <textarea class="form-control" asp-for="Password" rows="12" placeholder="Enter Content"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>designation</label>
+                                    <textarea class="form-control" asp-for="Designation" rows="12" placeholder="Enter Content"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>gender</label>
+                                    <textarea class="form-control" asp-for="Gender" rows="12" placeholder="Enter Content"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>place</label>
+                                    <textarea class="form-control" asp-for="Place" rows="12" placeholder="Enter Content"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>phone number</label>
+                                    <textarea class="form-control" asp-for="PhoneNo" rows="12" placeholder="Enter Content"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>secret key</label>
+                                    <textarea class="form-control" asp-for="Secret_Key" rows="12" placeholder="Enter Content"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>role</label>
+                                    <textarea class="form-control" asp-for="Role" rows="12" placeholder="Enter Content"></textarea>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="submit" value="Create" class="btn  btn-user btn-block my-4" style="background-color:mediumslateblue; color:white" />
+                                    </div>
+                                    <div class="col-6">
+
+                                        <input type="reset" value="Cancel" class="btn btn-outline-danger btn-user btn-block my-4" />
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+    }
+</form>
