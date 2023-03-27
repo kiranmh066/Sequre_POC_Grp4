@@ -60,7 +60,8 @@
                                 <td>@employee.Place</td>
                                 <td>@employee.Role</td>
                                 <td>@employee.Designation</td>
-                                <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="EditEmp" asp-route-EmpID="@employee.EmpID"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
+                                <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="EditEmp" asp-route-EmpID="@employee.EmpID">Edit<i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
+                                <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="DeleteEmp" asp-route-EmpID="@employee.EmpID">Delete<i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
                             </tr>
                         }
                     </tbody>

@@ -35,7 +35,9 @@ namespace Office_Seat_Booking_DLL
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
 
-            dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-63UI94V\\SQLEXPRESS; Initial Catalog = OfficeDb3; Integrated Security = True; Trusted_Connection=True; TrustServerCertificate=True;");
+            dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-63UI94V\\SQLEXPRESS; Initial Catalog = OfficeDb; Integrated Security = True; Trusted_Connection=True; TrustServerCertificate=True;");
+
+            
 
             
 

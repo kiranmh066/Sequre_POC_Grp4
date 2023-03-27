@@ -27,10 +27,36 @@ namespace Office_Seat_Booking_MVC.Controllers
         {
             return View();
         }
-        public IActionResult RegisterEmp()
+        public async Task<IActionResult> RegisterEmp()
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> RegisterEmp(Employee employee)
+        {
+                ViewBag.status = "";
+                using (HttpClient client = new HttpClient())
+                {
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(employee), Encoding.UTF8, "application/json");
+                    string endPoint = _configuration["WebApiBaseUrl"] + "Employee/AddEmployee";
+                    using (var response = await client.PostAsync(endPoint, content))
+                    {
+                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            ViewBag.status = "Ok";
+                            ViewBag.message = "Register successfully!";
+                        }
+                        else
+                        {
+                            ViewBag.status = "Error";
+                            ViewBag.message = "Wrong entries!";
+                        }
+                    }
+                }
+           return View();
+        }
+
         [HttpGet]
         public async Task<IActionResult> ViewEmp()
         {
@@ -100,7 +126,7 @@ namespace Office_Seat_Booking_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Doctor Details Updated Successfully!";
-                        //return RedirectToAction("GetAllDoctors", "Admin");
+                        return RedirectToAction("ViewEmp", "Admin");
                     }
                     else
                     {
@@ -112,6 +138,30 @@ namespace Office_Seat_Booking_MVC.Controllers
             return View();
         }
 
+        public async Task<IActionResult> DeleteEmp(int EmpId)
+        {
+            ViewBag.status = "";
+            //it will Delete the doctor Details by using doctor Id
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/DeleteEmployee?employeeId=" + EmpId;
+                using (var response = await client.DeleteAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Details Deleted Successfully!";
+                       // return RedirectToAction("", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
+                    }
+                }
+            }
+            return View();
+        }
 
     }
 }
