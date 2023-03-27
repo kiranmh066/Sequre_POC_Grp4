@@ -42,14 +42,14 @@ namespace Office_Seat_Booking_DLL.Repost
 
         public Employee Login(Employee employee)
         {
-            /* Employee employeeinfo = null;
-             var result = _dbContext.employee.Where(obj => obj.EmpEmail == employee.EmpEmail && obj.EmpPassword == employee.EmpPassword).ToList();
+            Employee employeeinfo = null;
+             var result = _dbContext.employee.Where(obj => obj.Email == employee.Email && obj.Password== employee.Password).ToList();
              if (result.Count > 0)
              {
                  employeeinfo = result[0];
              }
-             return employeeinfo;*/
-            return null;
+             return employeeinfo;
+           
         }
 
         public void UpdateEmployee(Employee employee)

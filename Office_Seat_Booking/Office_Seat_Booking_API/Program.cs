@@ -53,13 +53,20 @@ builder.Services.AddSwaggerGen();*/
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+   
+    app.UseSwaggerUI(options =>
+           options.SwaggerEndpoint("/swagger/v1/swagger.json", "Office_Seat_Booking_API"));
 }
 
 app.UseHttpsRedirection();
-
+app.UseRouting();
 app.UseAuthorization();
+app.UseAuthentication();
 
-app.MapControllers();
 
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 app.Run();

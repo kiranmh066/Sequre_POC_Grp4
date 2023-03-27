@@ -1,5 +1,4 @@
 ﻿using Office_Seat_Booking_DLL.Repost;
-using Office_Seat_Booking_DLL.Repost;
 using Office_Seat_Booking_Entity;
 using System;
 using System.Collections.Generic;
@@ -46,6 +45,10 @@ namespace Office_Seat_Booking_BLL.Services
         public Employee GetByEmployeeId(int EmployeeID)
         {
             return _employeeRepost.GetEmployeeById(EmployeeID);
+        }
+        public Employee Login(Employee employee)
+        {
+            return _employeeRepost.Login(employee);
         }
     }
 }
