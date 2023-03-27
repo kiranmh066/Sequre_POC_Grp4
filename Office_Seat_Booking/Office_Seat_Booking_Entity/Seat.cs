@@ -14,8 +14,11 @@ namespace Office_Seat_Booking_Entity
         [Key]
         public int Seat_No { get; set; }
 
-        [ForeignKey("Floor")]
-        public int FloorID { get; set; }
-        public Floor floor { get; set; }
+
+        [ForeignKey("booking")]
+
+
+        public int BookingId { get; set; }
+        public Booking booking { get; set; }
     }
 }

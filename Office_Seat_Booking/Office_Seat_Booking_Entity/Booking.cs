@@ -17,7 +17,7 @@ namespace Office_Seat_Booking_Entity
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             public int BookingID { get; set; }
 
-            [ForeignKey("Employee")]
+            [ForeignKey("employee")]
             public int EmployeeID { get; set; }
             public Employee employee { get; set; }
            

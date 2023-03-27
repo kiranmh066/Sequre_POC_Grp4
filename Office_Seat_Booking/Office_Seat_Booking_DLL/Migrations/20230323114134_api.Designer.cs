@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Office_Seat_Booking_DLL;
 
@@ -11,9 +12,11 @@ using Office_Seat_Booking_DLL;
 namespace Office_Seat_Booking_DLL.Migrations
 {
     [DbContext(typeof(OfficeDbContext))]
-    partial class OfficeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230323114134_api")]
+    partial class api
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -162,12 +165,12 @@ namespace Office_Seat_Booking_DLL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Seat_No"));
 
-                    b.Property<int>("BookingId")
+                    b.Property<int>("BookingID")
                         .HasColumnType("int");
 
                     b.HasKey("Seat_No");
 
-                    b.HasIndex("BookingId")
+                    b.HasIndex("BookingID")
                         .IsUnique();
 
                     b.ToTable("seat");
@@ -199,7 +202,7 @@ namespace Office_Seat_Booking_DLL.Migrations
                 {
                     b.HasOne("Office_Seat_Booking_Entity.Booking", "booking")
                         .WithOne("seat")
-                        .HasForeignKey("Office_Seat_Booking_Entity.Seat", "BookingId")
+                        .HasForeignKey("Office_Seat_Booking_Entity.Seat", "BookingID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
