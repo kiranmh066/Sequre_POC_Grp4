@@ -112,6 +112,33 @@ namespace Office_Seat_Booking_MVC.Controllers
             return View();
         }
 
+        public async Task<IActionResult> DeleteEmp(int EmpId)
+        {
+            ViewBag.status = "";
+            //it will Delete the doctor Details by using doctor Id
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/DeleteEmployee?employeeId=" + EmpId;
+                using (var response = await client.DeleteAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Details Deleted Successfully!";
+                        //return RedirectToAction("GetAllDoctors", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
+                    }
+                }
+            }
+            return View();
+
+
+
+        }
 
     }
 }
