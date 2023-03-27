@@ -12,8 +12,8 @@ using Office_Seat_Booking_DLL;
 namespace Office_Seat_Booking_DLL.Migrations
 {
     [DbContext(typeof(OfficeDbContext))]
-    [Migration("20230327092231_abc")]
-    partial class abc
+    [Migration("20230327094739_anb")]
+    partial class anb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
